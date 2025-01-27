@@ -149,17 +149,18 @@ projectsButton.addEventListener("click", (event) => {
     // Show the "Next Project" button
     nextProjectButton.style.display = "block";
 
-    // Change the text content of the paragraph
-    mainText.textContent = "This is the Services button test.";
+    // Reset to the first project
+    currentProjectIndex = 0; // Set to the first project
 
-    // Add a random video in the image container (same logic as before)
-    const videoUrls = [
-        "https://www.w3schools.com/html/movie.mp4",
-        "https://www.w3schools.com/html/mov_bbb.mp4",
-    ];
-    const randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
+    // Get the first project
+    const currentProject = projects[currentProjectIndex];
+
+    // Update the text content
+    mainText.textContent = currentProject.text;
+
+    // Update the video content
     const videoElement = document.createElement("video");
-    videoElement.src = randomVideoUrl;
+    videoElement.src = currentProject.video;
     videoElement.controls = true;
     videoElement.style.width = "100%";
     videoElement.style.height = "auto";
@@ -170,7 +171,11 @@ projectsButton.addEventListener("click", (event) => {
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
     mainImage.appendChild(videoElement);
+
+    // Increment the project index for the next project (handled by the Next Project button)
+    currentProjectIndex = (currentProjectIndex + 1) % projects.length;
 });
+
 
 // Hide the "Next Project" button when any other button is clicked
 [homeButton, aboutButton, skillsButton, contactButton].forEach((button) => {
@@ -179,22 +184,53 @@ projectsButton.addEventListener("click", (event) => {
     });
 });
 
+// Array of project data (texts and videos)
+const projects = [
+    {
+        text: "Project 1: This is the first project description.",
+        video: "https://www.w3schools.com/html/movie.mp4",
+    },
+    {
+        text: "Project 2: This is the second project description.",
+        video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    },
+    {
+        text: "Project 3: This is the third project description.",
+        video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    },
+];
+
+// Keep track of the current project index
+let currentProjectIndex = 0;
+
 // Add click event listener to the "Next Project" button
 nextProjectButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Cycle through the three states
-    if (nextProjectClickCount === 0) {
-        mainText.textContent = "This is the next project button test.";
-    } else if (nextProjectClickCount === 1) {
-        mainText.textContent = "This is the second next project button test.";
-    } else if (nextProjectClickCount === 2) {
-        mainText.textContent = "This is the Services button test."; // Reset to Services text
-    }
+    // Get the current project
+    const currentProject = projects[currentProjectIndex];
 
-    // Increment the click count and reset after 3 clicks
-    nextProjectClickCount = (nextProjectClickCount + 1) % 3;
+    // Update the text content
+    mainText.textContent = currentProject.text;
+
+    // Update the video content
+    const videoElement = document.createElement("video");
+    videoElement.src = currentProject.video;
+    videoElement.controls = true;
+    videoElement.style.width = "100%";
+    videoElement.style.height = "auto";
+
+    // Clear the main image container and append the new video
+    mainImage.innerHTML = "";
+    mainImage.style.borderRadius = "0";
+    mainImage.style.width = "auto";
+    mainImage.style.height = "auto";
+    mainImage.appendChild(videoElement);
+
+    // Move to the next project index (loop back to the start if at the end)
+    currentProjectIndex = (currentProjectIndex + 1) % projects.length;
 });
+
 
 contactButton.addEventListener("click", (event) => {
     event.preventDefault();
