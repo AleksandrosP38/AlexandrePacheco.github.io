@@ -57,6 +57,15 @@ const mainText = document.getElementById("main-text");
 const mainImage = document.querySelector(".main-container .image");
 const mainContainer = document.querySelector(".main-container");
 
+// Get references to elements
+const socialLinks = document.getElementById("social-links");
+const otherButtons = [
+    document.getElementById("home-button"),
+    document.getElementById("about-button"),
+    document.getElementById("skills-button"),
+    document.getElementById("projects-button"),
+];
+
 // Create the "Next Project" button dynamically
 let nextProjectButton = document.createElement("button");
 nextProjectButton.textContent = "Next Project";
@@ -184,34 +193,67 @@ projectsButton.addEventListener("click", (event) => {
     });
 });
 
-// Array of project data (texts and videos)
+// Array of project data (videos and dynamic text)
 const projects = [
     {
-        text: "Project 1: This is the first project description.",
-        video: "https://www.w3schools.com/html/movie.mp4",
+        video: "https://www.w3schools.com/html/movie.mp4", // Yin Yang video
+        updateContent: () => {
+            mainText.innerHTML = `
+                <h2>Project 1: Yin Yang</h2> 
+                <p>Yin Yang is a 2D platformer game where two players cooperate to complete levels. One player controls the black character, focusing exclusively on attack, while the other controls the white character, specializing in defense. Each character has unique abilities, and there are areas accessible only to one of them, depending on their color. The players must collaborate to overcome enemies and traps, collect keys, and reach the end of the levels.</p> 
+                <p><strong>My Contributions:</strong> I worked exclusively as a programmer in this project. I developed all the mechanics for Player 1 and Player 2, including their interactions with the levels. Additionally, I implemented the interactions related to colors, doors, moving platforms, keys, and portals for transitioning between levels.</p>`;
+        },
     },
     {
-        text: "Project 2: This is the second project description.",
-        video: "https://www.w3schools.com/html/mov_bbb.mp4",
+        video: "https://www.w3schools.com/html/mov_bbb.mp4", // Duality of Insanity video
+        updateContent: () => {
+            mainText.innerHTML = `
+                <h2>Project 2: Duality of Insanity</h2> 
+                <p>Duality of Insanity is a 3D horror/puzzle game where the player can switch between two modes: a normal mode and an "insane" mode. In the insane mode, the map and objects dynamically change. The player must leverage these modes to find clues and access exclusive areas in each mode to solve puzzles and progress through the game. However, staying in the insane mode for too long results in death, adding a layer of strategy and tension.</p> 
+                <p><strong>My Contributions:</strong> For this project, I worked as both a programmer and a sound designer. My tasks included:</p>
+                <ul>
+                    <li><strong>UI Programming:</strong> Implementing the main menu, pause menu, and the insanity meter.</li>
+                    <li><strong>Puzzle Programming:</strong> Developing two out of three puzzles in the game, specifically the first puzzle (the balance puzzle) and the final puzzle (the lever puzzle).</li>
+                    <li><strong>Sound Design:</strong> Creating, producing, and implementing all sound effects and audio systems in the game.</li>
+                </ul>`;
+        },
     },
     {
-        text: "Project 3: This is the third project description.",
-        video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+        video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", // Heads or Death video
+        updateContent: () => {
+            mainText.innerHTML = `
+                <h2>Project 3: Heads or Death (In Progress)</h2> 
+                <p>Heads or Death is a 3D fast-paced shooter where the player must eliminate as many enemies as possible in a short period to score the highest points. Special enemies appear during gameplay, and defeating them grants buffs or debuffs based on the player’s precision, adding a layer of risk and reward.</p> 
+                <p><strong>My Contributions:</strong> Due to the large team size, my role extends beyond gameplay programming to include other areas of development:</p>
+                <ul>
+                    <li><strong>Level Design:</strong> Designing all levels currently in the game.</li>
+                    <li><strong>UI Design & Programming:</strong> Creating menus, health bars, and options screens.</li>
+                    <li><strong>Sound Design & Implementation:</strong> Designing and implementing all audio elements in the game so far.</li>
+                    <li><strong>Gameplay Programming:</strong> Assisting with gameplay mechanics, including programming one of the enemies in the game and troubleshooting/debugging issues as they arise.</li>
+                    <li><strong>Game Design:</strong> Recently taking on the role of Game Designer, I developed the current game concept and mechanics.</li>
+                </ul>`;
+        },
     },
 ];
 
 // Keep track of the current project index
 let currentProjectIndex = 0;
 
-// Add click event listener to the "Next Project" button
-nextProjectButton.addEventListener("click", (event) => {
-    event.preventDefault();
+// Projects Button Event Listener
+projectsButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default link behavior
 
-    // Get the current project
+    // Show the "Next Project" button
+    nextProjectButton.style.display = "block";
+
+    // Reset to the first project
+    currentProjectIndex = 0;
+
+    // Get the first project
     const currentProject = projects[currentProjectIndex];
 
-    // Update the text content
-    mainText.textContent = currentProject.text;
+    // Update the text content using the project's updateContent function
+    currentProject.updateContent();
 
     // Update the video content
     const videoElement = document.createElement("video");
@@ -220,22 +262,72 @@ nextProjectButton.addEventListener("click", (event) => {
     videoElement.style.width = "100%";
     videoElement.style.height = "auto";
 
-    // Clear the main image container and append the new video
+    // Clear the main image container and append the video
     mainImage.innerHTML = "";
     mainImage.style.borderRadius = "0";
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
     mainImage.appendChild(videoElement);
+});
+
+// Add click event listener to the "Next Project" button
+nextProjectButton.addEventListener("click", (event) => {
+    event.preventDefault();
 
     // Move to the next project index (loop back to the start if at the end)
     currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+
+    // Get the current project
+    const currentProject = projects[currentProjectIndex];
+
+    // Update the text content using the project's updateContent function
+    currentProject.updateContent();
+
+    // Update the video content
+    const videoElement = document.createElement("video");
+    videoElement.src = currentProject.video;
+    videoElement.controls = true;
+    videoElement.style.width = "100%";
+    videoElement.style.height = "auto";
+
+    // Clear the main image container and append the video
+    mainImage.innerHTML = "";
+    mainImage.style.borderRadius = "0";
+    mainImage.style.width = "auto";
+    mainImage.style.height = "auto";
+    mainImage.appendChild(videoElement);
 });
 
 
+
+// Add click event listener to the Contact button
 contactButton.addEventListener("click", (event) => {
     event.preventDefault();
     resetContent();
     mainText.innerHTML = `<p>This is the Contacts button test.</p><p>This is my cellphone number: (123) 456-7890</p>`;
+
+    // Show social links
+    socialLinks.style.display = "flex";
+
+    // Check if the GitHub link is already created to prevent duplicates
+    if (!document.getElementById("github-link")) {
+        const githubLink = document.createElement("a");
+        githubLink.id = "github-link";
+        githubLink.href = "https://github.com/AleksandrosP38?tab=repositories";
+        githubLink.target = "_blank"; // Open in a new tab
+        const githubIcon = document.createElement("i");
+        githubIcon.classList.add("fa-brands", "fa-github");
+        githubLink.appendChild(githubIcon);
+        socialLinks.appendChild(githubLink);
+    }
+});
+
+// Add click event listeners to all other buttons
+otherButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        // Hide the social links when any other button is clicked
+        socialLinks.style.display = "none";
+    });
 });
 
 // Home Button Event Listener
@@ -245,6 +337,8 @@ homeButton.addEventListener("click", (event) => {
     mainText.innerHTML = `
         I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C# and Blueprints, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
     `;
+
+    
 });
 
 // Initialize everything on page load
