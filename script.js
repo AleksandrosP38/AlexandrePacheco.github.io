@@ -57,6 +57,8 @@ const mainText = document.getElementById("main-text");
 const mainImage = document.querySelector(".main-container .image");
 const mainContainer = document.querySelector(".main-container");
 
+
+
 // Get references to elements
 const socialLinks = document.getElementById("social-links");
 const otherButtons = [
@@ -151,41 +153,6 @@ skillsButton.addEventListener("click", (event) => {
 });
 
 
-// Add click event listener to the "Services" button
-projectsButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-
-    // Show the "Next Project" button
-    nextProjectButton.style.display = "block";
-
-    // Reset to the first project
-    currentProjectIndex = 0; // Set to the first project
-
-    // Get the first project
-    const currentProject = projects[currentProjectIndex];
-
-    // Update the text content
-    mainText.textContent = currentProject.text;
-
-    // Update the video content
-    const videoElement = document.createElement("video");
-    videoElement.src = currentProject.video;
-    videoElement.controls = true;
-    videoElement.style.width = "100%";
-    videoElement.style.height = "auto";
-
-    // Clear the main image container and append the video
-    mainImage.innerHTML = "";
-    mainImage.style.borderRadius = "0";
-    mainImage.style.width = "auto";
-    mainImage.style.height = "auto";
-    mainImage.appendChild(videoElement);
-
-    // Increment the project index for the next project (handled by the Next Project button)
-    currentProjectIndex = (currentProjectIndex + 1) % projects.length;
-});
-
-
 // Hide the "Next Project" button when any other button is clicked
 [homeButton, aboutButton, skillsButton, contactButton].forEach((button) => {
     button.addEventListener("click", () => {
@@ -239,9 +206,20 @@ const projects = [
 // Keep track of the current project index
 let currentProjectIndex = 0;
 
+// Add this helper function to remove the "Special Action" button if it exists
+function removeSpecialActionButton() {
+    const specialActionButton = document.getElementById("special-action-button");
+    if (specialActionButton) {
+        specialActionButton.remove();
+    }
+}
+
 // Projects Button Event Listener
 projectsButton.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default link behavior
+
+    // Remove the "Special Action" button before adding a new one (if any)
+    removeSpecialActionButton();
 
     // Show the "Next Project" button
     nextProjectButton.style.display = "block";
@@ -268,7 +246,40 @@ projectsButton.addEventListener("click", (event) => {
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
     mainImage.appendChild(videoElement);
+
+    // Add a new "Special Action" button dynamically
+    const newButton = document.createElement("button");
+    newButton.textContent = "Project Link"; // Button text
+    newButton.style.backgroundColor = "#007bff";
+    newButton.style.color = "white";
+    newButton.style.border = "none";
+    newButton.style.padding = "10px 20px";
+    newButton.style.borderRadius = "5px";
+    newButton.style.fontSize = "1.2rem";
+    newButton.style.cursor = "pointer";
+    newButton.style.marginTop = "20px";
+
+    // Add an ID to the new button to easily target it later
+    newButton.id = "special-action-button";
+
+    // Set the initial link for Project 1
+    newButton.onclick = () => window.open("https://github.com/k3vinszn/Ying-Yang1", "_blank");
+
+    // Append the new button to the content container
+    contentContainer.appendChild(newButton);
 });
+
+
+// Add click event listeners to other buttons (Home, About, Skills, Contact) to remove the "Special Action" button
+[homeButton, aboutButton, skillsButton, contactButton].forEach((button) => {
+    button.addEventListener("click", () => {
+        removeSpecialActionButton(); // Remove the "Special Action" button
+        nextProjectButton.style.display = "none"; // Optionally, hide the "Next Project" button if you want
+    });
+});
+
+
+
 
 // Add click event listener to the "Next Project" button
 nextProjectButton.addEventListener("click", (event) => {
@@ -296,7 +307,24 @@ nextProjectButton.addEventListener("click", (event) => {
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
     mainImage.appendChild(videoElement);
+
+    // Update the "Special Action" button link based on the project
+    const specialActionButton = document.getElementById("special-action-button");
+    if (specialActionButton) {
+        let link;
+        if (currentProjectIndex === 0) {
+            link = "https://github.com/k3vinszn/Ying-Yang1";
+        } else if (currentProjectIndex === 1) {
+            link = "https://github.com/k3vinszn/DualityOfInsanity";
+        } else if (currentProjectIndex === 2) {
+            link = "https://github.com/Votexdcx/HeadsOrDeath";
+        }
+
+        // Update the button click behavior to open the corresponding link
+        specialActionButton.onclick = () => window.open(link, "_blank");
+    }
 });
+
 
 
 
