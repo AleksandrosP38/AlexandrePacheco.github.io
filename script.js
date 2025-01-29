@@ -59,6 +59,8 @@ const mainContainer = document.querySelector(".main-container");
 
 
 
+
+
 // Get references to elements
 const socialLinks = document.getElementById("social-links");
 const otherButtons = [
@@ -101,6 +103,14 @@ window.onload = () => {
     resetContent(); // Apply the styles on page load
     typeWriter();
 };
+
+function removeProjectLinkButton() {
+    const projectLinkButton = document.getElementById("project-link-button");
+    if (projectLinkButton) {
+        projectLinkButton.remove();
+    }
+}
+
 
 // About Button Event Listener
 aboutButton.addEventListener("click", (event) => {
@@ -157,6 +167,7 @@ skillsButton.addEventListener("click", (event) => {
 [homeButton, aboutButton, skillsButton, contactButton].forEach((button) => {
     button.addEventListener("click", () => {
         nextProjectButton.style.display = "none"; // Hide the button
+        removeProjectLinkButton();
     });
 });
 
@@ -186,7 +197,7 @@ const projects = [
         },
     },
     {
-        video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", // Heads or Death video
+        video: "https://www.youtube.com/embed/A_feXMwKOBo", // Heads or Death video
         updateContent: () => {
             mainText.innerHTML = `
                 <h2>Project 3: Heads or Death (In Progress)</h2> 
@@ -214,11 +225,10 @@ function removeSpecialActionButton() {
     }
 }
 
-// Projects Button Event Listener
 projectsButton.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default link behavior
 
-    // Remove the "Special Action" button before adding a new one (if any)
+    // Remove the "Project Link" button before adding a new one (if any)
     removeSpecialActionButton();
 
     // Show the "Next Project" button
@@ -233,21 +243,43 @@ projectsButton.addEventListener("click", (event) => {
     // Update the text content using the project's updateContent function
     currentProject.updateContent();
 
-    // Update the video content
-    const videoElement = document.createElement("video");
-    videoElement.src = currentProject.video;
-    videoElement.controls = true;
-    videoElement.style.width = "100%";
-    videoElement.style.height = "auto";
-
-    // Clear the main image container and append the video
+    // Clear the main image container first
     mainImage.innerHTML = "";
     mainImage.style.borderRadius = "0";
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
-    mainImage.appendChild(videoElement);
 
-    // Add a new "Special Action" button dynamically
+    // Check if the current project is Project 1, 2, or 3
+    if (currentProjectIndex === 0) { // Project 1 (index 0)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/Tu6GFBRd5eQ"; // Project 1 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    } else if (currentProjectIndex === 1) { // Project 2 (index 1)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/BbFfpC6ncdo"; // Project 2 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    } else if (currentProjectIndex === 2) { // Project 3 (index 2)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    }
+
+    // Add a new "Project Link" button dynamically
     const newButton = document.createElement("button");
     newButton.textContent = "Project Link"; // Button text
     newButton.style.backgroundColor = "#007bff";
@@ -260,7 +292,7 @@ projectsButton.addEventListener("click", (event) => {
     newButton.style.marginTop = "20px";
 
     // Add an ID to the new button to easily target it later
-    newButton.id = "special-action-button";
+    newButton.id = "project-link-button";
 
     // Set the initial link for Project 1
     newButton.onclick = () => window.open("https://github.com/k3vinszn/Ying-Yang1", "_blank");
@@ -268,6 +300,8 @@ projectsButton.addEventListener("click", (event) => {
     // Append the new button to the content container
     contentContainer.appendChild(newButton);
 });
+
+
 
 
 // Add click event listeners to other buttons (Home, About, Skills, Contact) to remove the "Special Action" button
@@ -281,7 +315,6 @@ projectsButton.addEventListener("click", (event) => {
 
 
 
-// Add click event listener to the "Next Project" button
 nextProjectButton.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -294,23 +327,45 @@ nextProjectButton.addEventListener("click", (event) => {
     // Update the text content using the project's updateContent function
     currentProject.updateContent();
 
-    // Update the video content
-    const videoElement = document.createElement("video");
-    videoElement.src = currentProject.video;
-    videoElement.controls = true;
-    videoElement.style.width = "100%";
-    videoElement.style.height = "auto";
-
-    // Clear the main image container and append the video
+    // Clear the main image container first
     mainImage.innerHTML = "";
     mainImage.style.borderRadius = "0";
     mainImage.style.width = "auto";
     mainImage.style.height = "auto";
-    mainImage.appendChild(videoElement);
 
-    // Update the "Special Action" button link based on the project
-    const specialActionButton = document.getElementById("special-action-button");
-    if (specialActionButton) {
+    // Check if the current project is Project 1, 2, or 3
+    if (currentProjectIndex === 0) { // Project 1 (index 0)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/Tu6GFBRd5eQ"; // Project 1 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    } else if (currentProjectIndex === 1) { // Project 2 (index 1)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/BbFfpC6ncdo"; // Project 2 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    } else if (currentProjectIndex === 2) { // Project 3 (index 2)
+        const videoElement = document.createElement("iframe");
+        videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
+        videoElement.frameBorder = "0";
+        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        videoElement.allowFullscreen = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "auto";
+        mainImage.appendChild(videoElement);
+    }
+
+    // Update the "Project Link" button link based on the project
+    const projectLinkButton = document.getElementById("project-link-button");
+    if (projectLinkButton) {
         let link;
         if (currentProjectIndex === 0) {
             link = "https://github.com/k3vinszn/Ying-Yang1";
@@ -321,9 +376,10 @@ nextProjectButton.addEventListener("click", (event) => {
         }
 
         // Update the button click behavior to open the corresponding link
-        specialActionButton.onclick = () => window.open(link, "_blank");
+        projectLinkButton.onclick = () => window.open(link, "_blank");
     }
 });
+
 
 
 
