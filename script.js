@@ -158,6 +158,7 @@ skillsButton.addEventListener("click", (event) => {
             <li>Adobe After Effects</li>
             <li>Adobe Photoshop</li>
             <li>Adobe Illustrator</li>
+            <li>FMOD</li>
         </ul>
     `;
 });
@@ -174,7 +175,7 @@ skillsButton.addEventListener("click", (event) => {
 // Array of project data (videos and dynamic text)
 const projects = [
     {
-        video: "https://www.w3schools.com/html/movie.mp4", // Yin Yang video
+        video: "https://www.youtube.com/embed/Xs1K7F9pfr8", // Yin Yang video
         updateContent: () => {
             mainText.innerHTML = `
                 <h2>Project 1: Yin Yang</h2> 
@@ -183,7 +184,7 @@ const projects = [
         },
     },
     {
-        video: "https://www.w3schools.com/html/mov_bbb.mp4", // Duality of Insanity video
+        video: "https://www.youtube.com/embed/jOP96q0sDeA", // Duality of Insanity video
         updateContent: () => {
             mainText.innerHTML = `
                 <h2>Project 2: Duality of Insanity</h2> 
@@ -252,7 +253,7 @@ projectsButton.addEventListener("click", (event) => {
     // Check if the current project is Project 1, 2, or 3
     if (currentProjectIndex === 0) { // Project 1 (index 0)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/Tu6GFBRd5eQ"; // Project 1 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/Xs1K7F9pfr8"; // Project 1 YouTube video
         videoElement.frameBorder = "0";
         videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
@@ -261,7 +262,7 @@ projectsButton.addEventListener("click", (event) => {
         mainImage.appendChild(videoElement);
     } else if (currentProjectIndex === 1) { // Project 2 (index 1)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/BbFfpC6ncdo"; // Project 2 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/jOP96q0sDeA"; // Project 2 YouTube video
         videoElement.frameBorder = "0";
         videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
@@ -336,22 +337,24 @@ nextProjectButton.addEventListener("click", (event) => {
     // Check if the current project is Project 1, 2, or 3
     if (currentProjectIndex === 0) { // Project 1 (index 0)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/Tu6GFBRd5eQ"; // Project 1 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/Xs1K7F9pfr8"; // New Project 1 YouTube video
         videoElement.frameBorder = "0";
         videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
         videoElement.style.width = "100%";
         videoElement.style.height = "auto";
         mainImage.appendChild(videoElement);
-    } else if (currentProjectIndex === 1) { // Project 2 (index 1)
+    }
+     else if (currentProjectIndex === 1) { // Project 2 (index 1)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/BbFfpC6ncdo"; // Project 2 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/jOP96q0sDeA"; // Updated Project 2 video
         videoElement.frameBorder = "0";
         videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
         videoElement.style.width = "100%";
         videoElement.style.height = "auto";
         mainImage.appendChild(videoElement);
+        
     } else if (currentProjectIndex === 2) { // Project 3 (index 2)
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
