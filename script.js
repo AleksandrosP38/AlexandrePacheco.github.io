@@ -111,6 +111,13 @@ function removeProjectLinkButton() {
     }
 }
 
+function removeGameLinkButton() {
+    const gamelinkbutton = document.getElementById("game-link-button");
+    if (gamelinkbutton) {
+        gamelinkbutton.remove();
+    }
+}
+
 
 // About Button Event Listener
 aboutButton.addEventListener("click", (event) => {
@@ -169,6 +176,8 @@ skillsButton.addEventListener("click", (event) => {
     button.addEventListener("click", () => {
         nextProjectButton.style.display = "none"; // Hide the button
         removeProjectLinkButton();
+        removeGameLinkButton();
+        
     });
 });
 
@@ -300,6 +309,28 @@ projectsButton.addEventListener("click", (event) => {
 
     // Append the new button to the content container
     contentContainer.appendChild(newButton);
+
+
+    // Add a new "Game Link" button dynamically
+    const gamelinkbutton = document.createElement("button");
+    gamelinkbutton.textContent = "Game Link"; // Button text
+    gamelinkbutton.style.backgroundColor = "#007bff";
+    gamelinkbutton.style.color = "white";
+    gamelinkbutton.style.border = "none";
+    gamelinkbutton.style.padding = "10px 20px";
+    gamelinkbutton.style.borderRadius = "5px";
+    gamelinkbutton.style.fontSize = "1.2rem";
+    gamelinkbutton.style.cursor = "pointer";
+    gamelinkbutton.style.marginTop = "20px";
+
+    // Add an ID to the new button to easily target it later
+    gamelinkbutton.id = "game-link-button";
+
+    // Set the initial link for Project 1
+    gamelinkbutton.onclick = () => window.open("https://ghostcyder.itch.io/yin-yang?secret=pqa41VKpNwUJuX3Tb5nDxQh6Dw", "_blank");
+
+    // Append the new button to the content container
+    contentContainer.appendChild(gamelinkbutton);
 });
 
 
@@ -381,6 +412,22 @@ nextProjectButton.addEventListener("click", (event) => {
         // Update the button click behavior to open the corresponding link
         projectLinkButton.onclick = () => window.open(link, "_blank");
     }
+
+    // Update the "Project Link" button link based on the project
+    const gamelinkbutton = document.getElementById("game-link-button");
+    if (gamelinkbutton) {
+        let gamelink;
+        if (currentProjectIndex === 0) {
+            gamelink = "https://ghostcyder.itch.io/yin-yang?secret=pqa41VKpNwUJuX3Tb5nDxQh6Dw";
+        } else if (currentProjectIndex === 1) {
+            gamelink = "https://sabrinams.itch.io/duality-of-insanity";
+        } else if (currentProjectIndex === 2) {
+            gamelink = "https://github.com/Votexdcx/HeadsOrDeath";
+        }
+
+        // Update the button click behavior to open the corresponding link
+        gamelinkbutton.onclick = () => window.open(gamelink, "_blank");
+    }
 });
 
 
@@ -391,7 +438,7 @@ nextProjectButton.addEventListener("click", (event) => {
 contactButton.addEventListener("click", (event) => {
     event.preventDefault();
     resetContent();
-    mainText.innerHTML = `<p>This is the Contacts button test.</p><p>This is my cellphone number: (123) 456-7890</p>`;
+    mainText.innerHTML = `<p>alexandrepacheco2000@hotmail.com</p>`;
 
     // Show social links
     socialLinks.style.display = "flex";
