@@ -187,8 +187,8 @@ const projects = [
         video: "https://www.youtube.com/embed/Xs1K7F9pfr8", // Yin Yang video
         updateContent: () => {
             mainText.innerHTML = `
-                <h2>Project 1: Yin Yang</h2> 
-                <p>Yin Yang is a 2D platformer game where two players cooperate to complete levels. One player controls the black character, focusing exclusively on attack, while the other controls the white character, specializing in defense. Each character has unique abilities, and there are areas accessible only to one of them, depending on their color. The players must collaborate to overcome enemies and traps, collect keys, and reach the end of the levels.</p> 
+                <h2>Project 1: Ying Yang</h2> 
+                <p>Ying Yang is a 2D platformer game where two players cooperate to complete levels. One player controls the black character, focusing exclusively on attack, while the other controls the white character, specializing in defense. Each character has unique abilities, and there are areas accessible only to one of them, depending on their color. The players must collaborate to overcome enemies and traps, collect keys, and reach the end of the levels.</p> 
                 <p><strong>My Contributions:</strong> I worked exclusively as a programmer in this project. I developed all the mechanics for Player 1 and Player 2, including their interactions with the levels. Additionally, I implemented the interactions related to colors, doors, moving platforms, keys, and portals for transitioning between levels.</p>`;
         },
     },
@@ -326,7 +326,7 @@ projectsButton.addEventListener("click", (event) => {
     // Add a new "Game Link" button dynamically
     const gamelinkbutton = document.createElement("button");
     gamelinkbutton.textContent = "Game Link"; // Button text
-    gamelinkbutton.style.backgroundColor = "#007bff";
+    gamelinkbutton.style.backgroundColor = "#800080";  // Purple color
     gamelinkbutton.style.color = "white";
     gamelinkbutton.style.border = "none";
     gamelinkbutton.style.padding = "10px 20px";
@@ -434,7 +434,7 @@ nextProjectButton.addEventListener("click", (event) => {
         projectLinkButton.onclick = () => window.open(link, "_blank");
     }
 
-    // Update the "Project Link" button link based on the project
+    // Update the "Game Link" button link based on the project
     const gamelinkbutton = document.getElementById("game-link-button");
     if (gamelinkbutton) {
         let gamelink;
@@ -443,7 +443,7 @@ nextProjectButton.addEventListener("click", (event) => {
         } else if (currentProjectIndex === 1) {
             gamelink = "https://sabrinams.itch.io/duality-of-insanity";
         } else if (currentProjectIndex === 2) {
-            gamelink = "https://github.com/Votexdcx/HeadsOrDeath";
+            gamelink = "https://aleksandrosp38.itch.io/heads-or-death";
         }
 
         // Update the button click behavior to open the corresponding link
