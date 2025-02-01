@@ -239,7 +239,8 @@ projectsButton.addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default link behavior
 
     // Remove the "Project Link" button before adding a new one (if any)
-    removeSpecialActionButton();
+    removeProjectLinkButton();
+    removeGameLinkButton();
 
     // Show the "Next Project" button
     nextProjectButton.style.display = "block";
@@ -264,28 +265,39 @@ projectsButton.addEventListener("click", (event) => {
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/Xs1K7F9pfr8"; // Project 1 YouTube video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
+        mainImage.appendChild(videoElement);
+
         mainImage.appendChild(videoElement);
     } else if (currentProjectIndex === 1) { // Project 2 (index 1)
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/jOP96q0sDeA"; // Project 2 YouTube video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
         mainImage.appendChild(videoElement);
     } else if (currentProjectIndex === 2) { // Project 3 (index 2)
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
         mainImage.appendChild(videoElement);
     }
 
@@ -370,30 +382,39 @@ nextProjectButton.addEventListener("click", (event) => {
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/Xs1K7F9pfr8"; // New Project 1 YouTube video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
         mainImage.appendChild(videoElement);
     }
      else if (currentProjectIndex === 1) { // Project 2 (index 1)
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/jOP96q0sDeA"; // Updated Project 2 video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
         mainImage.appendChild(videoElement);
         
     } else if (currentProjectIndex === 2) { // Project 3 (index 2)
         const videoElement = document.createElement("iframe");
         videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
         videoElement.frameBorder = "0";
-        videoElement.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
         videoElement.allowFullscreen = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "auto";
+        videoElement.style.width = "100vw";  // Full width of the viewport
+        videoElement.style.height = "56.25vw"; // Maintain 16:9 aspect ratio (Height = Width * 9/16)
+        videoElement.style.maxWidth = "1200px"; // Prevents excessive stretching on large screens
+        videoElement.style.maxHeight = "675px"; // Keeps a reasonable max size
+        videoElement.style.display = "block";
+        videoElement.style.margin = "auto";   
         mainImage.appendChild(videoElement);
     }
 
