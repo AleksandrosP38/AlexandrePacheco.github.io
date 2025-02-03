@@ -187,7 +187,7 @@ const projects = [
         video: "https://www.youtube.com/embed/Xs1K7F9pfr8", // Yin Yang video
         updateContent: () => {
             mainText.innerHTML = `
-                <h2>Project 1: Ying Yang</h2> 
+                <h2>Project 1: Ying Yang (Unity)</h2> 
                 <p>Ying Yang is a 2D platformer game where two players cooperate to complete levels. One player controls the black character, focusing exclusively on attack, while the other controls the white character, specializing in defense. Each character has unique abilities, and there are areas accessible only to one of them, depending on their color. The players must collaborate to overcome enemies and traps, collect keys, and reach the end of the levels.</p> 
                 <p><strong>My Contributions:</strong> I worked exclusively as a programmer in this project. I developed all the mechanics for Player 1 and Player 2, including their interactions with the levels. Additionally, I implemented the interactions related to colors, doors, moving platforms, keys, and portals for transitioning between levels.</p>`;
         },
@@ -196,7 +196,7 @@ const projects = [
         video: "https://www.youtube.com/embed/jOP96q0sDeA", // Duality of Insanity video
         updateContent: () => {
             mainText.innerHTML = `
-                <h2>Project 2: Duality of Insanity</h2> 
+                <h2>Project 2: Duality of Insanity (Unreal Engine) </h2> 
                 <p>Duality of Insanity is a 3D horror/puzzle game where the player can switch between two modes: a normal mode and an "insane" mode. In the insane mode, the map and objects dynamically change. The player must leverage these modes to find clues and access exclusive areas in each mode to solve puzzles and progress through the game. However, staying in the insane mode for too long results in death, adding a layer of strategy and tension.</p> 
                 <p><strong>My Contributions:</strong> For this project, I worked as both a programmer and a sound designer. My tasks included:</p>
                 <ul>
@@ -210,7 +210,7 @@ const projects = [
         video: "https://www.youtube.com/embed/A_feXMwKOBo", // Heads or Death video
         updateContent: () => {
             mainText.innerHTML = `
-                <h2>Project 3: Heads or Death (In Progress)</h2> 
+                <h2>Project 3: Heads or Death (Unreal Engine, In Progress)</h2> 
                 <p>Heads or Death is a 3D fast-paced shooter where the player must eliminate as many enemies as possible in a short period to score the highest points. Special enemies appear during gameplay, and defeating them grants buffs or debuffs based on the player’s precision, adding a layer of risk and reward.</p> 
                 <p><strong>My Contributions:</strong> Due to the large team size, my role extends beyond gameplay programming to include other areas of development:</p>
                 <ul>

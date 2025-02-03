@@ -154,6 +154,7 @@ section{
     font-weight: 600;
 }
 .content .typewriter-text{
+    font-size: 2rem; /* Adjust the size as needed */
     color: #077b32;
     text-shadow: 0 0 10px #077b32;
 }
@@ -289,6 +290,19 @@ section{
     font-size: 1.2rem;
 }
 
+/* Set default font-size for both "I am" and typewriter text */
+.iam-text, .typewriter-text {
+    font-size: 2rem;  /* Adjust to match your desired size */
+    font-weight: bold;  /* Optional: Make both text bold */
+    font-family: inherit;  /* Ensures consistency with the main font */
+}
+
+/* Adjust text size for smaller screens (laptops and below) */
+@media screen and (max-width: 1024px) {
+    .iam-text, .typewriter-text {
+        font-size: 1.5rem;  /* Reduce size on smaller screens */
+    }
+}
 
 
 }
