@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 body{
+
+    overflow-y: auto;  /* Ensures vertical scrolling */
+    height: 100%;      /* Ensures the body takes up the full viewport height */
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -139,22 +142,30 @@ section{
 }
 .main-container .content{
     color: white;
-    width: 40%;
+    width: 100%; /* Alterado para 100% para ajustar dinamicamente */
+    max-width: 600px; /* Definindo um máximo para evitar que o texto ocupe demais o espaço */
     min-height: 100px;
+    padding: 20px; /* Adicionando um pouco de espaço ao redor do conteúdo */
+    box-sizing: border-box; /* Garantindo que o padding não altere o tamanho */
+    overflow: auto; /* Adicionando rolagem, se necessário */
+
+    width: 70vw; /* 90% of the viewport width */
+    height: 70vh; /* 90% of the viewport height */
 }
+
 .content h1{
-    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+    font-size: 1.5rem;
 }
 .content h1 span{
     color: #077b32;
     text-shadow: 0  0 10px #077b32;
 }
 .content .typewriter{
-    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-size: 1.5rem;
     font-weight: 600;
 }
 .content .typewriter-text{
-    font-size: 2rem; /* Adjust the size as needed */
+    font-size: 1.5rem; /* Adjust the size as needed */
     color: #077b32;
     text-shadow: 0 0 10px #077b32;
 }
@@ -262,6 +273,8 @@ section{
     align-items: center;
     gap: 20px;
 }
+
+
 
 .project {
     display: flex;
