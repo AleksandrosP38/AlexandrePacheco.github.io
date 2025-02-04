@@ -142,6 +142,7 @@ skillsButton.addEventListener("click", (event) => {
         <ul>
             <li>C#</li>
             <li>Blueprints</li>
+            <li>C++(Very Basic)</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
