@@ -217,7 +217,6 @@ const projects = [
                 <ul>
                     <li><strong>Level Design:</strong> Designing all levels currently in the game.</li>
                     <li><strong>UI Design & Programming:</strong> Creating menus, health bars, and options screens.</li>
-                    <li><strong>Sound Design & Implementation:</strong> Designing and implementing all audio elements in the game so far.</li>
                     <li><strong>Gameplay Programming:</strong> Assisting with gameplay mechanics, including programming one of the enemies in the game and troubleshooting/debugging issues as they arise.</li>
                     <li><strong>Game Design:</strong> Recently taking on the role of Game Designer, I developed the current game concept and mechanics.</li>
                 </ul>`;
