@@ -45,7 +45,7 @@ const originalImageStyle = {
     height: "80vh",
     boxShadow: "0 0 50px #077b32",
 };
-const originalText = `I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C# and Blueprints, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
+const originalText = `I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and basic C++, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
 `;
 
 const aboutButton = document.getElementById("about-button");
@@ -144,7 +144,7 @@ skillsButton.addEventListener("click", (event) => {
         <ul>
             <li>C#</li>
             <li>Blueprints</li>
-            <li>C++(Very Basic)</li>
+            <li>C++(Basic)</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -535,7 +535,7 @@ homeButton.addEventListener("click", (event) => {
     event.preventDefault();
     resetContent();
     mainText.innerHTML = `
-        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C# and Blueprints, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
+        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C#, Blueprints and basic C++, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
     `;
 
     
