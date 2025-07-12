@@ -56,6 +56,8 @@ const contactButton = document.getElementById("contact-button");
 const mainText = document.getElementById("main-text");
 const mainImage = document.querySelector(".main-container .image");
 const mainContainer = document.querySelector(".main-container");
+const experienceButton = document.getElementById("experience-button");
+
 
 
 
@@ -171,16 +173,49 @@ skillsButton.addEventListener("click", (event) => {
     `;
 });
 
+experienceButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    resetContent();
+    removeProjectLinkButton();
+    removeGameLinkButton();
+    nextProjectButton.style.display = "none";
+
+    mainText.innerHTML = `
+        <h2>Professional Experience – The Indigent Studio</h2>
+        <p><strong>Role:</strong> Programmer (Internship)</p>
+        <p>During my internship at The Indigent Studio, I worked as a programmer focused on optimizing and enhancing core systems for a game project.</p>
+        <ul>
+            <li><strong>Gameplay Programming:</strong> Refactored and optimized gameplay scripts for better clarity and performance.</li>
+            <li><strong>UI Programming:</strong> Designed and implemented a level selection menu with star-based progression and lock/unlock logic.</li>
+            <li><strong>Input System Development:</strong> Reworked the player's control scheme, replacing mouse-based movement with a complete WASD keyboard system.</li>
+            <li><strong>Debugging:</strong> Identified and resolved bugs related to movement, character rotation, and camera behavior.</li>
+        </ul>
+        <p>This hands-on experience helped solidify my understanding of real-world game production workflows and polish my programming practices for future professional work.</p>
+    `;
+
+    // Optionally add a placeholder image or message
+    mainImage.innerHTML = `
+    <img src="TheIndigentStudioImage.jpg" alt="The Indigent Studio" style="width: 100%; max-width: 600px; border-radius: 20px; box-shadow: 0 0 30px #077b32;">
+`;
+    mainImage.style.borderRadius = "0";
+    mainImage.style.width = "auto";
+    mainImage.style.height = "auto";
+    // Hide social links if visible
+    socialLinks.style.display = "none";
+});
+
 
 // Hide the "Next Project" button when any other button is clicked
-[homeButton, aboutButton, skillsButton, contactButton].forEach((button) => {
+[homeButton, aboutButton, skillsButton, contactButton, experienceButton].forEach((button) => {
     button.addEventListener("click", () => {
-        nextProjectButton.style.display = "none"; // Hide the button
+        nextProjectButton.style.display = "none";
         removeProjectLinkButton();
         removeGameLinkButton();
-        
+        removeSpecialActionButton?.();
+        socialLinks.style.display = "none";
     });
 });
+
 
 // Array of project data (videos and dynamic text)
 const projects = [
