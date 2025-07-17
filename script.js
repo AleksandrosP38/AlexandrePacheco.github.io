@@ -251,7 +251,7 @@ const projects = [
         },
     },
     {
-        video: "https://www.youtube.com/embed/A_feXMwKOBo", // Heads or Death video
+        video: "https://www.youtube.com/embed/mz_NE3yP6XE", // Heads or Death video
         updateContent: () => {
             mainText.innerHTML = `
                 <h2>Project 3: Heads or Death </h2> 
@@ -334,7 +334,7 @@ projectsButton.addEventListener("click", (event) => {
         mainImage.appendChild(videoElement);
     } else if (currentProjectIndex === 2) { // Project 3 (index 2)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/mz_NE3yP6XE"; // Project 3 YouTube video
         videoElement.frameBorder = "0";
         videoElement.allowFullscreen = true;
         videoElement.style.width = "100vw";  // Full width of the viewport
@@ -451,7 +451,7 @@ nextProjectButton.addEventListener("click", (event) => {
         
     } else if (currentProjectIndex === 2) { // Project 3 (index 2)
         const videoElement = document.createElement("iframe");
-        videoElement.src = "https://www.youtube.com/embed/A_feXMwKOBo"; // Project 3 YouTube video
+        videoElement.src = "https://www.youtube.com/embed/mz_NE3yP6XE"; // Project 3 YouTube video
         videoElement.frameBorder = "0";
         videoElement.allowFullscreen = true;
         videoElement.style.width = "100vw";  // Full width of the viewport
