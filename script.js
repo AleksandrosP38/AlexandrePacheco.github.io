@@ -45,7 +45,7 @@ const originalImageStyle = {
     height: "80vh",
     boxShadow: "0 0 50px #077b32",
 };
-const originalText = `I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and basic C++, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
+const originalText = `I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal, with a bachelor's degree in Video Games and Multimedia Applications from Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and basic C++, particularly in level design, interfaces, and character behaviors. I am passionate about pushing the boundaries of interactive experiences and creating immersive gameplay.
 `;
 
 const aboutButton = document.getElementById("about-button");
@@ -128,11 +128,11 @@ aboutButton.addEventListener("click", (event) => {
 
     mainText.innerHTML = `
         <h2>About Me</h2>
-        <p>I'm a video game programmer based in Porto, Portugal. From a young age, I’ve been passionate about video games and sports. My journey into game development began at Lusófona University of Porto, where I am now in my final year of a bachelor's degree in Video Games and Multimedia Applications.</p>
-        <p>Throughout my studies, I've gained proficiency in programming languages like C# and Blueprints, while also exploring web technologies such as HTML, CSS, and JavaScript. My primary focus has always been game programming, especially working on level design, character behaviors, and user interfaces. I find programming the levels and interfaces to be the most exciting part of game development, but I also enjoy creating the behaviors that bring characters to life.</p>
-        <p>Additionally, I've worked on sound programming using FMOD, which has allowed me to integrate dynamic audio experiences into my projects. Whether it's programming gameplay mechanics or creating immersive soundscapes, I’m always eager to push the limits of what’s possible in game development.</p>
-        <p>If you're looking for a dedicated and passionate developer for your next project, feel free to reach out. Let’s create something amazing together!</p>
-    `;
+    <p>I'm a video game programmer based in Porto, Portugal, passionate about both video games and sports since a young age. My journey into game development led me to earn a bachelor's degree in Video Games and Multimedia Applications from Lusófona University of Porto.</p>
+    <p>Throughout my experience, I’ve developed strong skills in programming languages such as C#, Blueprints, and basic C++, along with a working knowledge of web technologies like HTML, CSS, and JavaScript. My primary focus is on game programming, specializing in level design, character behaviors, and user interfaces. I particularly enjoy building engaging levels and interfaces while bringing characters to life through responsive and dynamic behaviors.</p>
+    <p>I’ve also worked with FMOD to design and implement interactive sound experiences, enhancing the immersion and overall quality of my projects. Whether it’s developing core gameplay systems, creating seamless interfaces, or integrating dynamic audio, I’m passionate about pushing the boundaries of interactive entertainment.</p>
+    <p>If you’re looking for a dedicated and creative developer for your next project, feel free to reach out—let’s build something amazing together!</p>
+`;
 });
 
 skillsButton.addEventListener("click", (event) => {
@@ -535,7 +535,7 @@ homeButton.addEventListener("click", (event) => {
     event.preventDefault();
     resetContent();
     mainText.innerHTML = `
-        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal. Currently finishing my bachelor's in Video Games and Multimedia Applications at Lusófona University. My focus is on game development, with expertise in C#, Blueprints and basic C++, especially in level design, interfaces, and character behaviors. I’m always eager to push the limits of interactive experiences and create immersive gameplay.
+        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal, with a bachelor's degree in Video Games and Multimedia Applications from Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and basic C++, particularly in level design, interfaces, and character behaviors. I am passionate about pushing the boundaries of interactive experiences and creating immersive gameplay.
     `;
 
     
