@@ -129,7 +129,7 @@ aboutButton.addEventListener("click", (event) => {
     mainText.innerHTML = `
         <h2>About Me</h2>
     <p>I'm a video game programmer based in Porto, Portugal, passionate about both video games and sports since a young age. My journey into game development led me to earn a bachelor's degree in Video Games and Multimedia Applications from Lusófona University of Porto.</p>
-    <p>Throughout my experience, I’ve developed strong skills in programming languages such as C#, Blueprints, and basic C++, along with a working knowledge of web technologies like HTML, CSS, and JavaScript. My primary focus is on game programming, specializing in level design, character behaviors, and user interfaces. I particularly enjoy building engaging levels and interfaces while bringing characters to life through responsive and dynamic behaviors.</p>
+    <p>Throughout my experience, I’ve developed strong skills in programming languages such as C#, Blueprints, and C++, along with a working knowledge of web technologies like HTML, CSS, and JavaScript. My primary focus is on game programming, specializing in level design, character behaviors, and user interfaces. I particularly enjoy building engaging levels and interfaces while bringing characters to life through responsive and dynamic behaviors.</p>
     <p>I’ve also worked with FMOD to design and implement interactive sound experiences, enhancing the immersion and overall quality of my projects. Whether it’s developing core gameplay systems, creating seamless interfaces, or integrating dynamic audio, I’m passionate about pushing the boundaries of interactive entertainment.</p>
     <p>If you’re looking for a dedicated and creative developer for your next project, feel free to reach out—let’s build something amazing together!</p>
 `;
@@ -144,7 +144,7 @@ skillsButton.addEventListener("click", (event) => {
         <ul>
             <li>C#</li>
             <li>Blueprints</li>
-            <li>C++(Basic)</li>
+            <li>C++</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -535,7 +535,7 @@ homeButton.addEventListener("click", (event) => {
     event.preventDefault();
     resetContent();
     mainText.innerHTML = `
-        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal, with a bachelor's degree in Video Games and Multimedia Applications from Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and basic C++, particularly in level design, interfaces, and character behaviors. I am passionate about pushing the boundaries of interactive experiences and creating immersive gameplay.
+        I'm Alexandre Alves Pacheco, a video game programmer from Porto, Portugal, with a bachelor's degree in Video Games and Multimedia Applications from Lusófona University. My focus is on game development, with expertise in C#, Blueprints, and C++, particularly in level design, interfaces, and character behaviors. I am passionate about pushing the boundaries of interactive experiences and creating immersive gameplay.
     `;
 
     
